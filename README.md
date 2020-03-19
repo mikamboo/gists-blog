@@ -6,7 +6,7 @@ Read my blog post [here](https://pambo-ognana.ga/create-a-simple-markdown-blog-w
 
 ## Setup summary
 
-1. Create a new nuxtjs app
+1. Create a new nuxtjs app: `yarn create nuxt-app nuxt-markdown-blog`
 2. Add [frontmatter-markdown-loader](https://www.npmjs.com/packagefrontmatter-markdown-loader) Webpack Loader
 3. Add markdown content as our blog posts
 4. Build, generate, deploy ...

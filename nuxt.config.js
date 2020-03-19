@@ -1,7 +1,41 @@
+import path from 'path'
 import pkg from './package'
+
+function getRoutes(dir) {
+  const fs = require('fs')
+  const glob = require('glob')
+  const files = glob.sync(dir)
+  const data = files.map(function (file) {
+    let name = path.basename(file)
+    name = name.substr(0, name.lastIndexOf('.'))
+    const route = `/posts/${name}`
+    return {
+      name,
+      file,
+      route
+    }
+  })
+
+  const json = JSON.stringify(data)
+  fs.writeFileSync('./content/posts.json', json)
+
+  return data
+}
+
+/* eslint-disable */
+//-- Create json routes fron
+getRoutes('./content/posts/*.md')
+//console.log(require('./content/posts.json').map(x => x.route))
+/* eslint-enable */
 
 export default {
   mode: 'universal',
+
+  generate: {
+    routes() {
+      return require('./content/posts.json').map(x => x.route)
+    }
+  },
 
   /*
   ** Headers of the page
@@ -67,6 +101,17 @@ export default {
           exclude: /(node_modules)/
         })
       }
+
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        include: path.resolve(__dirname, 'content'),
+        options: {
+          vue: {
+            root: 'dynamic-md'
+          }
+        }
+      })
     }
   }
 }

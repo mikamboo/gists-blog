@@ -13,5 +13,13 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'object-curly-spacing': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+    'spaced-comment': 'off',
+    'space-before-function-paren': 'off',
+    'vue/html-self-closing': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+    'vue/html-closing-bracket-spacing': 'off'
   }
 }
