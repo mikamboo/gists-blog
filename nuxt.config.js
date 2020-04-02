@@ -1,9 +1,28 @@
 import path from 'path'
 import pkg from './package'
 
-function getRoutes(dir) {
+async function getRoutes(dir) {
   const fs = require('fs')
   const glob = require('glob')
+  const http = require('https')
+  const Gists = require('gists')
+
+  const gistsInstance = new Gists({})
+  const res = await gistsInstance.list('mikamboo')
+
+  const posts = res.body.filter((x) => {
+    return 'gistsblog.json' in x.files && 'README.md' in x.files
+  })
+
+  posts.forEach((post) => {
+    const file = fs.createWriteStream(`./content/posts/${post.id}.md`)
+    http.get(post.files['README.md'].raw_url, function(response) {
+      // eslint-disable-next-line no-console
+      //console.log(post.files['README.md'])
+      response.pipe(file)
+    })
+  })
+
   const files = glob.sync(dir)
   const data = files.map(function (file) {
     let name = path.basename(file)

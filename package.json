@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-markdown-blog",
+  "name": "gist-blog",
   "version": "1.0.0",
   "description": "Create a markdown blog with Nuxt",
   "author": "Michael",
@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "gists": "^2.0.0",
     "@nuxtjs/bulma": "^1.2.1",
     "cross-env": "^5.2.0",
     "frontmatter-markdown-loader": "^1.6.0",
