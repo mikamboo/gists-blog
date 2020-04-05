@@ -1,13 +1,15 @@
 <template>
   <div :key="$route.params.slug">
-    <section class="hero is-medium is-dark is-bold" :style="{ background: 'url('+ attributes.cover +')' }">
+    <section class="hero is-large is-dark" :style="{ backgroundImage: 'url('+ attributes.cover +')' }">
       <div class="hero-body">
-        <h1 class="title is-size-2">
-          {{ attributes.title }}
-        </h1>
-        <h2 v-if="attributes.date" class="subtitle">
-          {{ new Date(attributes.date).toLocaleDateString() }}
-        </h2>
+        <div class="container">
+          <h1 class="title is-size-2">
+            {{ attributes.title }}
+          </h1>
+          <h2 v-if="attributes.date" class="subtitle">
+            {{ new Date(attributes.date).toLocaleDateString() }}
+          </h2>
+        </div>
       </div>
     </section>
     <div class="container">
@@ -18,10 +20,13 @@
 </template>
 
 <style lang="scss" scoped>
+.hero{
+  background-size: cover;
+}
 .hero-body {
   display: inline-block;
   background: rgba(0, 0, 0, 0.3);
-  margin: 0 3% 0 3%;
+  margin: 0 8% 0 8%;
 }
 .content {
   margin-top: 2em;
