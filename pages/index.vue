@@ -8,32 +8,20 @@
       <h2 class="subtitle0">
         A simple Gists markdown blog with Nuxt
       </h2>
+      <div class="deploy-button">
+        <a href="https://app.netlify.com/start/deploy?repository=https://github.com/mikamboo/gistsblog">
+          <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+        </a>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-
-const posts = require('~/content/posts.json')
-
 export default {
   components: {
     Logo
-  },
-  data() {
-    return {
-      routes: [],
-      files: posts
-    }
-  },
-  created() {
-    this.$router.options.routes.forEach((route) => {
-      this.routes.push({
-        name: route.name,
-        path: route.path
-      })
-    })
   }
 }
 </script>

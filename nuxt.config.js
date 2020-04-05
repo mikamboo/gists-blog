@@ -9,10 +9,10 @@ export default {
   generate: {
     routes() {
       //-- Fecth gist post + genrate routes
-      if (!process.env.GIST_USER) {
-        throw new Error('GIST_USER env variable is mandatory')
+      if (!process.env.GISTS_USER) {
+        throw new Error('GISTS_USER env variable is mandatory')
       }
-      gistblog.loadPosts(`${gistblog.contentDir}/posts/*.md`, process.env.GIST_USER)
+      gistblog.loadPosts(`${gistblog.contentDir}/posts/*.md`, process.env.GISTS_USER)
       return require(gistblog.routesFile).map(x => x.route)
     }
   },
