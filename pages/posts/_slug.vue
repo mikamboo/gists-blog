@@ -41,6 +41,11 @@ export default {
       attributes: res.attributes,
       content: res.html
     }
+  },
+  head() {
+    return {
+      title: this.attributes.title
+    }
   }
 }
 </script>

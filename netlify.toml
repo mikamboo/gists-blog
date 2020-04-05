@@ -3,4 +3,4 @@
   command = "npm run generate"
 
 [build.environment]
-  GISTS_USER = "put-a-value"
+  GISTS_USER = "xxx"

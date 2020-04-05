@@ -13,7 +13,6 @@ function dowloadFile(url, fileStream) {
   })
 }
 
-
 /**
  * Utils function to convert any string into an URL-optimized slug
  * https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
@@ -40,9 +39,9 @@ const routesFile = `${contentDir}/posts.json`
 
 export default {
 
-  contentDir: contentDir,
+  contentDir,
 
-  routesFile: routesFile,
+  routesFile,
 
   // init: function() {
   //   if (fs.existsSync(routesFile) === false) {
@@ -56,7 +55,7 @@ export default {
    * @param dir string : .md posts directory
    * @param username string : user posts owner
    */
-  loadPosts: async function(dir, username) {
+  async loadPosts(dir, username) {
     const Gists = require('gists')
     const gistsInstance = new Gists({})
     const res = await gistsInstance.list(username)

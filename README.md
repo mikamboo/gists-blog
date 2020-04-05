@@ -16,6 +16,14 @@ Otherwise, you can follow these steps!
 4. 🌌 Build the app for server-side rendered deployment. See more about **Universal SSR** in the [Nuxt.js docs](https://nuxtjs.org/guide#server-rendered-universal-ssr-).
 5. ⚡️ Generate a fully pre-rendered static site. See more [in the docs](https://nuxtjs.org/guide#static-generated-pre-rendering-).
 
+## How it works ?
+
+1. The site genertor require a `GISTS_USER` environnement variable to fetch user posts from Github Gists.
+2. All gists containing a `README.md` __+__ `gistsblog.json` will be considered as blog posts
+
+* __README.md__ File contains article markdown
+* __gistsblog.json__ is just a filter to avoid to take all Gists
+
 ## Build Setup
 
 ``` bash
@@ -41,3 +49,11 @@ For detailed explanation on how things work, checkout :
 - [NPM frontmatter-markdown-loader package](https://www.npmjs.com/package/frontmatter-markdown-loader)
 - [Blog post : Nuxt markdown blog](https://pambo-ognana.ga/create-a-simple-markdown-blog-with-nuxtjs)
 - [uxt & Netlify CMS Starter](https://github.com/xdesro/nuxt-netlify-cms-starter)
+
+## TODO
+
+* [ ] Add demo site
+* [ ] Add article meta description, tags ...
+* [ ] Articles fallback cover image
+* [ ] Display frontmatter meta only if defined
+* [ ] Support for Google analytics
