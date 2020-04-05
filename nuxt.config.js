@@ -1,58 +1,19 @@
+/* eslint-disable no-console */
 import path from 'path'
 import pkg from './package'
-
-async function getRoutes(dir) {
-  const fs = require('fs')
-  const glob = require('glob')
-  const http = require('https')
-  const Gists = require('gists')
-
-  const gistsInstance = new Gists({})
-  const res = await gistsInstance.list('mikamboo')
-
-  const posts = res.body.filter((x) => {
-    return 'gistsblog.json' in x.files && 'README.md' in x.files
-  })
-
-  posts.forEach((post) => {
-    const file = fs.createWriteStream(`./content/posts/${post.id}.md`)
-    http.get(post.files['README.md'].raw_url, function(response) {
-      // eslint-disable-next-line no-console
-      //console.log(post.files['README.md'])
-      response.pipe(file)
-    })
-  })
-
-  const files = glob.sync(dir)
-  const data = files.map(function (file) {
-    let name = path.basename(file)
-    name = name.substr(0, name.lastIndexOf('.'))
-    const route = `/posts/${name}`
-    return {
-      name,
-      file,
-      route
-    }
-  })
-
-  const json = JSON.stringify(data)
-  fs.writeFileSync('./content/posts.json', json)
-
-  return data
-}
-
-/* eslint-disable */
-//-- Create json routes fron
-getRoutes('./content/posts/*.md')
-//console.log(require('./content/posts.json').map(x => x.route))
-/* eslint-enable */
+import gistblog from './gistblog'
 
 export default {
   mode: 'universal',
 
   generate: {
     routes() {
-      return require('./content/posts.json').map(x => x.route)
+      //-- Fecth gist post + genrate routes
+      if (!process.env.GIST_USER) {
+        throw new Error('GIST_USER env variable is mandatory')
+      }
+      gistblog.loadPosts(`${gistblog.contentDir}/posts/*.md`, process.env.GIST_USER)
+      return require(gistblog.routesFile).map(x => x.route)
     }
   },
 
@@ -87,7 +48,13 @@ export default {
   */
   plugins: [
   ],
-
+  /*
+  ** Nuxt.js dev-modules
+  */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module'
+  ],
   /*
   ** Nuxt.js modules
   */

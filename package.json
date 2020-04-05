@@ -13,28 +13,22 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "gists": "^2.0.0",
     "@nuxtjs/bulma": "^1.2.1",
     "cross-env": "^5.2.0",
     "frontmatter-markdown-loader": "^1.6.0",
+    "gists": "^2.0.0",
     "glob": "^7.1.4",
     "nuxt": "^2.4.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^0.0.1",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",
-    "eslint-config-standard": ">=12.0.0",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-import": ">=2.16.0",
-    "eslint-plugin-jest": ">=22.3.0",
-    "eslint-plugin-node": ">=8.0.1",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-promise": ">=4.0.1",
-    "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.11"
   }
 }
