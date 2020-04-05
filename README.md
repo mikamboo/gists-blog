@@ -1,15 +1,8 @@
-# nuxt-markdown-blog
+# Gist blog
 
-> Create a simple markdown blog with [Nuxt.js](https://nuxtjs.org)
+> A simple [static rendered](https://jamstack.wtf/) blog site genrator, based on [Nuxt.js](https://nuxtjs.org) that fecth posts data from your [Github gists](https://gist.github.com/).
 
-Read my blog post [here](https://pambo-ognana.ga/create-a-simple-markdown-blog-with-nuxtjs)
-
-## Setup summary
-
-1. Create a new nuxtjs app: `yarn create nuxt-app nuxt-markdown-blog`
-2. Add [frontmatter-markdown-loader](https://www.npmjs.com/packagefrontmatter-markdown-loader) Webpack Loader
-3. Add markdown content as our blog posts
-4. Build, generate, deploy ...
+Demo : [TODO]()
 
 ## Build Setup
 
@@ -28,7 +21,10 @@ $ yarn start
 $ yarn run generate
 ```
 
+## Inspired/Referred
+
 For detailed explanation on how things work, checkout :
 
 - [Nuxt.js docs](https://nuxtjs.org)
-- [frontmatter-markdown-loader package](https://nuxtjs.org)
+- [NPM frontmatter-markdown-loader package](https://www.npmjs.com/package/frontmatter-markdown-loader)
+- [Blog post : Nuxt markdown blog](https://pambo-ognana.ga/create-a-simple-markdown-blog-with-nuxtjs)

@@ -1,25 +1,13 @@
 <template>
   <section class="container">
-    <div>
+    <div class="content0">
       <logo />
-      <h1 class="title">
-        nuxt-md-blog
+      <h1 class="title0">
+        gists-blog
       </h1>
-      <h2 class="subtitle">
-        Create a simple markdown blog with Nuxt
+      <h2 class="subtitle0">
+        A simple Gists markdown blog with Nuxt
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Tutorial</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >Sources</a>
-      </div>
     </div>
   </section>
 </template>
@@ -51,28 +39,26 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.content0 {
+  margin: 18% auto;
   text-align: center;
 }
 
-.title {
+.title0 {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 5em;
   color: #35495e;
   letter-spacing: 1px;
+  margin: 30px;
+  text-transform: capitalize;
 }
 
-.subtitle {
+.subtitle0 {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 2em;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;

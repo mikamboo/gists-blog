@@ -82,7 +82,3 @@ dist
 
 # Service worker
 sw.*
-
-# Downloaded posts files
-content/**
-content/posts.json

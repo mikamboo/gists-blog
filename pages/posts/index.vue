@@ -1,22 +1,25 @@
 <template>
   <section class="container">
-    <nuxt-link v-for="(post, index) in posts" :key="index" :to="{path: `/posts/${post.route}` }">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img :src="post.cover" alt="Cover image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">{{ post.title }}</p>
-              <p class="subtitle is-6">{{ new Date(post.date).toLocaleDateString() }}</p>
+    <div class="articles">
+      <nuxt-link v-for="(post, index) in posts" :key="index" :to="{path: `/posts/${post.route}` }">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img :src="post.cover" alt="Cover image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4">{{ post.title }}</p>
+                <p class="subtitle is-6">{{ new Date(post.date).toLocaleDateString() }}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nuxt-link>
+      </nuxt-link>
+    </div>
+
   </section>
 </template>
 
@@ -43,8 +46,13 @@ export default {
 </script>
 
 <style>
+.articles{
+  margin-top: 5em;
+  display: flex;
+  border-radius: 5px;
+}
 .card{
-  margin: 5px;
-  width: 300px;
+  margin: 10px;
+  width: 280px;
 }
 </style>

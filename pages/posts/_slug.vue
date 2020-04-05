@@ -23,6 +23,9 @@
   background: rgba(0, 0, 0, 0.3);
   margin: 0 3% 0 3%;
 }
+.content {
+  margin-top: 2em;
+}
 </style>
 
 <script>
