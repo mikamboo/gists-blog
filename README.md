@@ -57,3 +57,6 @@ For detailed explanation on how things work, checkout :
 * [ ] Articles fallback cover image
 * [ ] Display frontmatter meta only if defined
 * [ ] Support for Google analytics
+* [ ] Use [@nuxtjs/markdownit](https://github.com/xdesro/nuxt-netlify-cms-starter/blob/master/pages/blog/_blog.vue) ?
+* [ ] Add vuex state management [like this example](https://github.com/xdesro/nuxt-netlify-cms-starter/blob/master/store/index.js)
+* [ ] Update posts dowload for create unique json managed by [vuex store : nuxtServerInit](https://github.com/xdesro/nuxt-netlify-cms-starter/blob/master/store/index.js)
