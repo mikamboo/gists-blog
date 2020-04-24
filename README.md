@@ -4,9 +4,9 @@
 
 ## 🎉 Getting Started
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=hhttps://github.com/mikamboo/gistsblog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=hhttps://github.com/mikamboo/gists-blog)
 
-Demo : [My personal Gists Blog]()
+Demo : [Mikamboo's Gists Blog]()
 
 Otherwise, you can follow these steps!
 
