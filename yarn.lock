@@ -5722,6 +5722,11 @@ lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.15:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
+logger-nodejs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/logger-nodejs/-/logger-nodejs-1.1.0.tgz#d19ade92f9ada624cc65d5cfef9291cb358d78b5"
+  integrity sha512-pGRRFGye9kVL9ErfXxW1++4NhPrVVy0y8MTIeb3dlH0r5Xcvdv1AmV1TzP4ai9ysnTPK9emRsolhl8sVYg+8yQ==
+
 loose-envify@^1.0.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"

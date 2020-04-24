@@ -3,14 +3,34 @@ import fs from 'fs'
 import path from 'path'
 import https from 'https'
 import glob from 'glob'
+import Logger from 'logger-nodejs'
 
-function dowloadFile(url, fileStream) {
-  return new Promise((resolve, reject) => {
+const log = new Logger()
+
+/**
+ * Synchronous download file
+ * @param {strin} url Source URL
+ * @param {string} fileName Destination
+ */
+function dowloadFile(url, fileName) {
+  log.info(`Download file : ${url}`)
+  const promise = new Promise((resolve, reject) => {
     https.get(url, function(response) {
-      response.pipe(fileStream)
-      resolve()
+      const chunksOfData = []
+      response.on('data', (fragments) => {
+        chunksOfData.push(fragments)
+      })
+
+      response.on('end', () => {
+        const data = Buffer.concat(chunksOfData)
+        fs.writeFileSync(fileName, data)
+        log.info(`SUCCESS - downloaded : ${fileName}`)
+        resolve()
+      })
     })
   })
+
+  return promise
 }
 
 /**
@@ -40,7 +60,7 @@ const routesFile = `${contentDir}/posts.json`
 export default {
 
   contentDir,
-
+  postsDir,
   routesFile,
 
   // init: function() {
@@ -52,10 +72,9 @@ export default {
 
   /**
    * Dowload markdown post files for specified Github Gist user.
-   * @param dir string : .md posts directory
    * @param username string : user posts owner
    */
-  async loadPosts(dir, username) {
+  async loadPosts(username) {
     const Gists = require('gists')
     const gistsInstance = new Gists({})
     const res = await gistsInstance.list(username)
@@ -64,13 +83,20 @@ export default {
       return 'gistsblog.json' in x.files && 'README.md' in x.files
     })
 
-    posts.forEach(async (post) => {
-      const file = fs.createWriteStream(`${postsDir}/${post.id}.md`)
-      const url = post.files['README.md'].raw_url
-      await dowloadFile(url, file)
-    })
+    log.info(`Found : ${posts.length} Gists-Blog posts`)
 
-    const files = glob.sync(dir)
+    for (let i = 0; i < posts.length; i++) {
+      const post = posts[i]
+      const fileName = `${postsDir}/${post.id}.md`
+      const url = post.files['README.md'].raw_url
+      try {
+        await dowloadFile(url, fileName)
+      } catch (error) {
+        throw new Error(`Errror occurs while dowloading post: ${post.id}.md`)
+      }
+    }
+
+    const files = glob.sync(`${postsDir}/*.md`)
     const data = files.map(function (file) {
       let name = path.basename(file)
       name = name.substr(0, name.lastIndexOf('.'))
@@ -86,6 +112,6 @@ export default {
     const json = JSON.stringify(data)
     fs.writeFileSync(routesFile, json)
 
-    return data
+    return json
   }
 }
