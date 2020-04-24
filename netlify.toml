@@ -2,5 +2,5 @@
   publish = "dist/"
   command = "npm run generate"
 
-[context.production]
-  environment = { GISTS_USER = "my-gh-username"
+[build.environment]
+  GISTS_USER = "my-gh-username"
