@@ -37,8 +37,9 @@ export default {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 5em;
-  color: #35495e;
+  font-size: 4em;
+  text-transform: uppercase;
+  color: hsl(162, 100%, 23%);
   letter-spacing: 1px;
   margin: 30px;
   text-transform: capitalize;

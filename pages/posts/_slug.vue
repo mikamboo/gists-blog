@@ -1,9 +1,9 @@
 <template>
   <div :key="$route.params.slug">
-    <section class="hero is-large is-dark" :style="{ backgroundImage: 'url('+ attributes.cover +')' }">
+    <section class="hero is-medium is-dark" :style="{ backgroundImage: 'url('+ attributes.cover +')' }">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title is-size-2">
+          <h1 class="title is-size-1">
             {{ attributes.title }}
           </h1>
           <h2 v-if="attributes.date" class="subtitle">
