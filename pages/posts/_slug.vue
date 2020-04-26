@@ -7,7 +7,7 @@
             {{ attributes.title }}
           </h1>
           <h2 v-if="attributes.date" class="subtitle">
-            {{ new Date(attributes.date).toLocaleDateString() }}
+            Publication date {{ new Date(attributes.date).toLocaleDateString('fr-FR') }}
           </h2>
         </div>
       </div>
@@ -37,8 +37,14 @@
 export default {
   async asyncData ({ params }) {
     const res = await import(`~/content/posts/${params.slug}.md`)
+    let attributes = res.attributes
+    attributes = {
+      title: attributes.title === undefined ? 'UNTITLED POST' : attributes.title,
+      date: attributes.date === undefined ? new Date('1970-01-01') : attributes.date,
+      cover: attributes.cover === undefined ? 'https://images.unsplash.com/photo-1553532434-5ab5b6b84993?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80' : attributes.cover
+    }
     return {
-      attributes: res.attributes,
+      attributes,
       content: res.html
     }
   },

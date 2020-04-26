@@ -3,13 +3,13 @@
     <div class="content0">
       <logo />
       <h1 class="title0">
-        gists-blog
+        GISTS-BLOG
       </h1>
       <h2 class="subtitle0">
         A simple Gists markdown blog with Nuxt
       </h2>
       <div class="deploy-button">
-        <a href="https://app.netlify.com/start/deploy?repository=https://github.com/mikamboo/gistsblog">
+        <a href="https://app.netlify.com/start/deploy?repository=https://github.com/mikamboo/gists-blog">
           <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
         </a>
       </div>
@@ -37,8 +37,7 @@ export default {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 4em;
-  text-transform: uppercase;
+  font-size: 3.5em;
   color: hsl(162, 100%, 23%);
   letter-spacing: 1px;
   margin: 30px;
@@ -47,7 +46,7 @@ export default {
 
 .subtitle0 {
   font-weight: 300;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
