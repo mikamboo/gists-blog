@@ -1,6 +1,6 @@
 [build]
   publish = "dist/"
-  command = "npm run build && npm run generate"
+  command = "yarn run generate"
 
 [build.environment]
   GISTS_USER = "my-gh-username"
