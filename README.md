@@ -6,9 +6,9 @@
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mikamboo/gists-blog)
 
-Demo : [Mikamboo's Gists Blog]()
+Demo : [Mikamboo's Gists Blog](https://gistblog.netlify.app)
 
-Otherwise, you can follow these steps!
+## Otherwise, you can follow these steps!
 
 1. 👯‍♂️ Clone the repository locally and cd into the directory.
 2. 📦 Install dependencies.
@@ -31,10 +31,10 @@ Otherwise, you can follow these steps!
 $ yarn install
 
 # serve with hot reload at localhost:3000
-$ yarn run dev
+$ GISTS_USER=your-user-name yarn run dev
 
 # build for production and launch server
-$ yarn run build
+$ GISTS_USER=your-user-name yarn run generate
 $ yarn start
 
 # generate static blog
@@ -52,11 +52,10 @@ For detailed explanation on how things work, checkout :
 
 ## TODO
 
-* [ ] Add demo site
 * [ ] Add article meta description, tags ...
 * [ ] Articles fallback cover image
 * [ ] Display frontmatter meta only if defined
 * [ ] Support for Google analytics
 * [ ] Use [@nuxtjs/markdownit](https://github.com/xdesro/nuxt-netlify-cms-starter/blob/master/pages/blog/_blog.vue) ?
 * [ ] Add vuex state management [like this example](https://github.com/xdesro/nuxt-netlify-cms-starter/blob/master/store/index.js)
-* [ ] Update posts dowload for create unique json managed by [vuex store : nuxtServerInit](https://github.com/xdesro/nuxt-netlify-cms-starter/blob/master/store/index.js)
+* [ ] Update posts download for create unique json managed by [vuex store : nuxtServerInit](https://github.com/xdesro/nuxt-netlify-cms-starter/blob/master/store/index.js)
