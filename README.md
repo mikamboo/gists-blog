@@ -4,7 +4,7 @@
 
 ## 🎉 Getting Started
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=hhttps://github.com/mikamboo/gists-blog)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mikamboo/gists-blog)
 
 Demo : [Mikamboo's Gists Blog]()
 
