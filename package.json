@@ -15,10 +15,10 @@
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",
     "cross-env": "^5.2.0",
-    "frontmatter-markdown-loader": "^1.6.0",
+    "frontmatter-markdown-loader": "^3.7.0",
     "gists": "^2.0.0",
     "glob": "^7.1.4",
-    "nuxt": "^2.4.0"
+    "nuxt": "^3.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
@@ -29,7 +29,7 @@
     "logger-nodejs": "^1.1.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^13.2.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
