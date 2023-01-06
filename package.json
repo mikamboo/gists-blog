@@ -18,7 +18,7 @@
     "frontmatter-markdown-loader": "^1.6.0",
     "gists": "^2.0.0",
     "glob": "^7.1.4",
-    "nuxt": "^2.4.0"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
